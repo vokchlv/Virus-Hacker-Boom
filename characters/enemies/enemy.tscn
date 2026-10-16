@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b02wr03mb8hgo"]
 
-[ext_resource type="Script" uid="uid://k8upe2nxq8ul" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="PackedScene" uid="uid://dtjuysmf883q7" path="res://scenes/projectile.tscn" id="2_4ra3w"]
+[ext_resource type="Script" uid="uid://k8upe2nxq8ul" path="res://characters/enemies/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://dtjuysmf883q7" path="res://projectiles/projectile.tscn" id="2_4ra3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djds4"]
 

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://de5sl2sdqld37"]
+
+[ext_resource type="Script" uid="uid://d2sieiry00ci7" path="res://ui/hud/hud.gd" id="1_xmswo"]
+[ext_resource type="Texture2D" uid="uid://duil8g3oeeeim" path="res://ui/assets/Bars.png" id="2_4d6w6"]
+[ext_resource type="Script" uid="uid://d0pfc3q6sof8y" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="3_e0nub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d6w6"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(48, 16, 27, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0nub"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(21, 16, 27, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfles"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(48, 0, 27, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aixkq"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(21, 0, 27, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w75iv"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imuuq"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwc50"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2lis"]
+atlas = ExtResource("2_4d6w6")
+region = Rect2(80, 16, 16, 16)
+
+[node name="HUD" type="CanvasLayer" unique_id=2146832601]
+script = ExtResource("1_xmswo")
+health_alive = SubResource("AtlasTexture_4d6w6")
+health_dead = SubResource("AtlasTexture_e0nub")
+processing_power_full = SubResource("AtlasTexture_gfles")
+processing_power_empty = SubResource("AtlasTexture_aixkq")
+segment_frame = SubResource("AtlasTexture_w75iv")
+segment_fill = SubResource("AtlasTexture_imuuq")
+end_frame = SubResource("AtlasTexture_kwc50")
+end_fill = SubResource("AtlasTexture_o2lis")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=699622979]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_right = 4.0
+grow_vertical = 0
+
+[node name="BarsContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1871432247]
+layout_mode = 2
+
+[node name="HealthBar" type="HBoxContainer" parent="HBoxContainer/BarsContainer" unique_id=650997313]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="ProcessingPowerBar" type="HBoxContainer" parent="HBoxContainer/BarsContainer" unique_id=388553465]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="InventoryGrid" type="Control" parent="HBoxContainer" unique_id=2104968856]
+layout_mode = 2
+script = ExtResource("3_e0nub")
+metadata/_custom_type_script = "uid://d0pfc3q6sof8y"
