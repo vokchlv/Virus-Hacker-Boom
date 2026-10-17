@@ -36,6 +36,11 @@ func discharge(amount: int) -> void:
 func _physics_process(delta: float) -> void:
 	var move_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
+	if move_direction.x < 0:
+		animated_sprite.flip_h = true
+	elif move_direction.x > 0:
+		animated_sprite.flip_h = false
+	
 	if move_direction != Vector2.ZERO:
 		animated_sprite.play("running")
 		velocity.x = speed * move_direction.x
